@@ -45,11 +45,13 @@ const images = [
   for (let i = 0; i < images.length; i++) {
     const slideUrl = images[i].image;
     const titolo = images[i].title;
-
+    const testo = images[i].text;
     //console.log(slideUrl);
     const imgMarkup = 
-    `<img class="img-fluid ${i === activeImage ? 'active' : ''}" src="./assets/${slideUrl}" alt= "">`;
-    //prendo l'elemento della dom dove inserire le imamgini le inserisco
+    `<img class="img-fluid ${i === activeImage ? 'active' : ''}" src="./assets/${slideUrl}" alt= "">
+    <h3 class=" text-center">${titolo}</h3>
+    <p class="text-center">${testo}</p>`;
+    //prendo l'elemento della dom dove inserire le imamgini e le inserisco
     slidesElement.insertAdjacentHTML('beforeend', imgMarkup);
   }
   
