@@ -62,7 +62,7 @@ const images = [
   
     //cambierà l’immagine attiva
     // selezionare dalla dom l'immagine attualmente attiva
-    const activeSlideElement = document.querySelector('.slides > card.active')
+    const activeSlideElement = document.querySelector('.slides > .card.active')
     //console.log(images[activeImage]);
   
     //console.log(activeSlideElement);
@@ -70,6 +70,10 @@ const images = [
     activeSlideElement.classList.remove('active');
     // incremento active image di 1
     activeImage++ // activeImage = activeImage + 1
+    if (activeImage ==5) {
+        activeImage=0;
+    }
+
     //console.log(activeImage); // al primo click il valore da 0 diventa 1
     // seleziono tutte le immagini
     const allSlides = document.getElementsByClassName('card')
@@ -86,15 +90,20 @@ const images = [
     //console.log('Ho cliccato su prev');
     //cambierà l’immagine attiva
     // selezionare dalla dom l'immagine attualmente attiva
-    const activeSlideElement = document.querySelector('.slides > img.active')
+    const activeSlideElement = document.querySelector('.slides > .card.active')
     //console.log(activeSlideElement);
     // tolgo all'immagine la classe active
     activeSlideElement.classList.remove('active');
     // incremento active image di 1
-    activeImage-- // activeImage = activeImage + 1
+    if (activeImage == 0) {
+        activeImage = 5;
+    }
+    activeImage-- // activeImage = activeImage - 1
+    
+
     //console.log(activeImage); // al primo click il valore da 0 diventa 1
     // seleziono tutte le immagini
-    const allSlides = document.getElementsByClassName('img-fluid')
+    const allSlides = document.getElementsByClassName('card')
     // sleziono l'immagine successiva
     const nextSlideElement = allSlides[activeImage];
     // aggiungo alla slide successiva la class active
