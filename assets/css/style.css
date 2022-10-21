@@ -1,0 +1,40 @@
+.slider {
+    position: relative;
+  }
+  
+  .slides img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  
+  }
+  
+  .slides img:not(img.active) {
+    display: none;
+  }
+  
+  .slides img.active {
+    display: block;
+  }
+  
+  .controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .prev,
+  .next {
+    width: 2rem;
+    margin: 0.25rem;
+    background-color: rgb(65, 63, 63);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    line-height: 2rem;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+  }
