@@ -36,10 +36,7 @@ const images = [
   
   // Seleziono l'indice dell'immagine che voglio attivare
   let activeImage = 0;
-  
-  
-  
-  
+
   // inseriamo tutte le immagini dinamicamente servendoci dell 'array fornito
   
   for (let i = 0; i < images.length; i++) {
@@ -48,9 +45,13 @@ const images = [
     const testo = images[i].text;
     //console.log(slideUrl);
     const imgMarkup = 
-    `<img class="img-fluid ${i === activeImage ? 'active' : ''}" src="./assets/${slideUrl}" alt= "">
-    <h3 class=" text-center">${titolo}</h3>
-    <p class="text-center">${testo}</p>`;
+    `<div class="card ${i === activeImage ? 'active' : ''}">
+        <img class="img-fluid " src="./assets/${slideUrl}" alt= "">
+        <div class="body_card">
+            <h3 class="text-center">${titolo}</h3>
+            <p class="text-center">${testo}</p>
+        </div>
+    </div>`;
     //prendo l'elemento della dom dove inserire le imamgini e le inserisco
     slidesElement.insertAdjacentHTML('beforeend', imgMarkup);
   }
@@ -61,7 +62,7 @@ const images = [
   
     //cambierà l’immagine attiva
     // selezionare dalla dom l'immagine attualmente attiva
-    const activeSlideElement = document.querySelector('.slides > img.active')
+    const activeSlideElement = document.querySelector('.slides > card.active')
     //console.log(images[activeImage]);
   
     //console.log(activeSlideElement);
@@ -71,7 +72,7 @@ const images = [
     activeImage++ // activeImage = activeImage + 1
     //console.log(activeImage); // al primo click il valore da 0 diventa 1
     // seleziono tutte le immagini
-    const allSlides = document.getElementsByClassName('img-fluid')
+    const allSlides = document.getElementsByClassName('card')
     // sleziono l'immagine successiva
     const nextSlideElement = allSlides[activeImage];
     // aggiungo alla slide successiva la class active

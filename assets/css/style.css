@@ -9,11 +9,11 @@
   
   }
   
-  .slides img:not(img.active) {
+  .slides .card:not(.active) {
     display: none;
   }
   
-  .slides img.active {
+  .slides .card.active {
     display: block;
     position: relative;
   }
@@ -39,7 +39,7 @@
     cursor: pointer;
     color: white;
   }
-  h3,p{
+  .body_card{
     position: absolute;
     bottom: 0;
     color: white;
